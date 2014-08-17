@@ -22,16 +22,4 @@ class ApplicationResolver
 	{
 		return self::$environment;
 	}
-
-	static public function modules(array $defaultModules, array $environmentSpecificModules = [])
-	{
-		$env = self::getEnvironmentName();
-
-		if (isset($environmentSpecificModules[$env]))
-		{
-			return array_merge($defaultModules, $environmentSpecificModules[$env]);
-		}
-
-		return $defaultModules;
-	}
 } 
